@@ -22,7 +22,14 @@ $(function () {
       }, 2000);
     });
   });
-
+  window.addEventListener("click", function (e) {
+    if (
+      !document.querySelector(".navbar-menu").contains(e.target) &&
+      !document.querySelector(".navbar-wrapper").contains(e.target)
+    ) {
+      $(".navbar-menu").hide();
+    }
+  });
   // fixed menu
   var navbar = document.querySelector(".navbar-wrapper");
   $(window).scroll(function () {
@@ -175,73 +182,7 @@ $(function () {
     e.preventDefault();
     $(".search-page").css({ opacity: "0", visibility: "hidden" });
   });
-  //portfolio btn
-  const buttons = document.querySelectorAll(".portfolio-btn .btn");
-  const allBtn = document.querySelector(".portfolio-btn .btn:first-child");
-  const webdesignBtn = document.querySelector(
-    ".portfolio-btn .btn:nth-child(2)"
-  );
-  const videoBtn = document.querySelector(".portfolio-btn .btn:nth-child(3)");
-  const logosBtn = document.querySelector(".portfolio-btn .btn:nth-child(4)");
-  const brandingBtn = document.querySelector(".portfolio-btn .btn:last-child");
-  const galleryAll = document.querySelector(".gallery-all");
-  const galleryWeb = document.querySelector(".gallery-webdesign");
-  const galleryVideo = document.querySelector(".gallery-video");
-  const galleryLogos = document.querySelector(".gallery-logos");
-  const galleryBranding = document.querySelector(".gallery-branding");
-  //buttons
-  for (var i = 0; i < buttons.length; i++) {
-    buttons[i].classList.remove("current-btn");
-    buttons[i].onclick = function (event) {
-      removeClass();
-      if (event.target.innerHTML === this.innerHTML) {
-        this.classList.add("current-btn");
-      }
-    };
-  }
-  function removeClass() {
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].classList.remove("current-btn");
-    }
-  }
-  allBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    galleryAll.style.display = "grid";
-    galleryVideo.style.display = "none";
-    galleryLogos.style.display = "none";
-    galleryBranding.style.display = "none";
-    galleryWeb.style.display = "none";
-  });
-  webdesignBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    galleryAll.style.display = "none";
-    galleryVideo.style.display = "none";
-    galleryLogos.style.display = "none";
-    galleryBranding.style.display = "none";
-    galleryWeb.style.display = "grid";
-  });
-  videoBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    galleryAll.style.display = "none";
-    galleryLogos.style.display = "none";
-    galleryBranding.style.display = "none";
-    galleryWeb.style.display = "none";
-    galleryVideo.style.display = "grid";
-  });
-  logosBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    galleryAll.style.display = "none";
-    galleryVideo.style.display = "none";
-    galleryBranding.style.display = "none";
-    galleryWeb.style.display = "none";
-    galleryLogos.style.display = "grid";
-  });
-  brandingBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    galleryAll.style.display = "none";
-    galleryVideo.style.display = "none";
-    galleryLogos.style.display = "none";
-    galleryWeb.style.display = "none";
-    galleryBranding.style.display = "grid";
+  $(searchInput).focus(function () {
+    $(blink).css("display", "none");
   });
 });

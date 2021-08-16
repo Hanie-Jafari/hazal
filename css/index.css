@@ -797,6 +797,9 @@ body {
   background-color: whitesmoke;
   padding: 100px 0;
 }
+.clients .container {
+  width: 100%;
+}
 .clients .container h5 {
   font-size: 30px;
   letter-spacing: 5px;
@@ -819,11 +822,7 @@ body {
   cursor: pointer;
 }
 .clients-images .clients-images-box1 {
-  background: url("../images/t1.jpeg");
-  background-size: cover;
-}
-.clients-images .clients-images-box1 {
-  background: url("../images/t1.jpeg");
+  background: url("../images/t5.jpeg");
   background-size: cover;
 }
 .clients-images .clients-images-box2 {
@@ -842,13 +841,10 @@ body {
   background: url("../images/t4.jpeg");
   background-size: cover;
 }
-.clients-images .clients-images-box1 {
-  background: url("../images/t5.jpeg");
-  background-size: cover;
-}
 .clients-images .clients-images-box6 {
   background: url("../images/t6.jpeg");
   background-size: cover;
+  margin-right: 0px;
 }
 .clients-content {
   width: 100%;
@@ -1384,6 +1380,7 @@ body {
   left: 0;
   top: 0;
   z-index: 10;
+  color: gray;
 }
 .pagination p:nth-child(2):hover a,
 .pagination2 p:first-child:hover a {
@@ -1392,6 +1389,12 @@ body {
 /* search page */
 .search-result {
   text-align: center;
+  padding: 50px 0;
+}
+.search-result h1 {
+  font-size: 45px;
+  letter-spacing: 10px;
+  margin-bottom: 0px;
 }
 .search-content {
   padding: 15px 0;
@@ -1751,11 +1754,25 @@ body {
   .search-page {
     justify-content: center;
   }
+  .search-result h1 {
+    font-size: 35px !important;
+    letter-spacing: normal;
+  }
   .search-page .search-input {
     margin-left: 0rem;
   }
   .search-page input {
     font-size: 6vw !important;
+  }
+  .search-content p {
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 5px;
+  }
+  /* clients */
+  .clients-images .clients-images-box {
+    width: 30px;
+    height: 30px;
   }
 }
 @media (max-width: 425px) {

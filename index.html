@@ -289,7 +289,7 @@
                     <h6>Lightning Upgrade</h6>
                     <p>Wordpress / Photoshop</p>
                 </div>
-                <div class="gallery-box wow fadeInRight">
+                <div class="gallery-box">
                     <div class="gallery-box-pic">
                         <div class="gallery-box-hover">
                             <div class="btn">MORE</div>
@@ -300,7 +300,7 @@
                     <h6>Apple IMac</h6>
                     <p>Web Design / Development</p>
                 </div>
-                <div class="gallery-box wow fadeInRight">
+                <div class="gallery-box">
                     <div class="gallery-box-pic">
                         <div class="gallery-box-hover">
                             <div class="btn">MORE</div>
@@ -311,7 +311,7 @@
                     <h6>Radio Desk</h6>
                     <p>Personal project</p>
                 </div>
-                <div class="gallery-box wow fadeInRight">
+                <div class="gallery-box">
                     <div class="gallery-box-pic">
                         <div class="gallery-box-hover">
                             <div class="btn">MORE</div>
@@ -322,7 +322,7 @@
                     <h6>Multiple Images</h6>
                     <p>Photography</p>
                 </div>
-                <div class="gallery-box wow fadeInRight">
+                <div class="gallery-box ">
                     <div class="gallery-box-pic">
                         <div class="gallery-box-hover">
                             <div class="btn">MORE</div>
@@ -333,7 +333,7 @@
                     <h6>Black IPhone</h6>
                     <p>Mockups</p>
                 </div>
-                <div class="gallery-box wow fadeInRight">
+                <div class="gallery-box ">
                     <div class="gallery-box-pic">
                         <div class="gallery-box-hover">
                             <div class="btn">MORE</div>
@@ -344,7 +344,7 @@
                     <h6>Personal Fullscreen Video</h6>
                     <p>Video / Motion</p>
                 </div>
-                <div class="gallery-box wow fadeInRight">
+                <div class="gallery-box ">
                     <div class="gallery-box-pic">
                         <div class="gallery-box-hover">
                             <div class="btn">MORE</div>
@@ -760,6 +760,75 @@
                 } else {
                     message.style.border = "1px solid red";
                 }
+            });
+            //portfolio btn
+            const buttons = document.querySelectorAll(".portfolio-btn .btn");
+            const allBtn = document.querySelector(".portfolio-btn .btn:first-child");
+            const webdesignBtn = document.querySelector(
+                ".portfolio-btn .btn:nth-child(2)"
+            );
+            const videoBtn = document.querySelector(".portfolio-btn .btn:nth-child(3)");
+            const logosBtn = document.querySelector(".portfolio-btn .btn:nth-child(4)");
+            const brandingBtn = document.querySelector(".portfolio-btn .btn:last-child");
+            const galleryAll = document.querySelector(".gallery-all");
+            const galleryWeb = document.querySelector(".gallery-webdesign");
+            const galleryVideo = document.querySelector(".gallery-video");
+            const galleryLogos = document.querySelector(".gallery-logos");
+            const galleryBranding = document.querySelector(".gallery-branding");
+            //buttons
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("current-btn");
+                buttons[i].onclick = function (event) {
+                    removeClass();
+                    if (event.target.innerHTML === this.innerHTML) {
+                        this.classList.add("current-btn");
+                    }
+                };
+            }
+            function removeClass() {
+                for (var i = 0; i < buttons.length; i++) {
+                    buttons[i].classList.remove("current-btn");
+                }
+            }
+            allBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+                galleryAll.style.display = "grid";
+                galleryVideo.style.display = "none";
+                galleryLogos.style.display = "none";
+                galleryBranding.style.display = "none";
+                galleryWeb.style.display = "none";
+            });
+            webdesignBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+                galleryAll.style.display = "none";
+                galleryVideo.style.display = "none";
+                galleryLogos.style.display = "none";
+                galleryBranding.style.display = "none";
+                galleryWeb.style.display = "grid";
+            });
+            videoBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+                galleryAll.style.display = "none";
+                galleryLogos.style.display = "none";
+                galleryBranding.style.display = "none";
+                galleryWeb.style.display = "none";
+                galleryVideo.style.display = "grid";
+            });
+            logosBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+                galleryAll.style.display = "none";
+                galleryVideo.style.display = "none";
+                galleryBranding.style.display = "none";
+                galleryWeb.style.display = "none";
+                galleryLogos.style.display = "grid";
+            });
+            brandingBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+                galleryAll.style.display = "none";
+                galleryVideo.style.display = "none";
+                galleryLogos.style.display = "none";
+                galleryWeb.style.display = "none";
+                galleryBranding.style.display = "grid";
             });
         })
     </script>
