@@ -354,7 +354,7 @@ body {
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -1592,9 +1592,6 @@ body {
   #header .hero {
     background-position: right bottom;
     animation: 10s linear zoominout;
-  }
-  .hero-content {
-    top: 70%;
   }
   .hero-content .hero-title,
   .blog-hero h1 {
