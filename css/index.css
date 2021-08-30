@@ -1593,6 +1593,9 @@ body {
     background-position: right bottom;
     animation: 10s linear zoominout;
   }
+  .hero-content {
+    top: 40%;
+  }
   .hero-content .hero-title,
   .blog-hero h1 {
     font-size: 45px;
@@ -1659,6 +1662,9 @@ body {
   }
   .blog-gallery .blog-gallery-box .blog-gallery-img-frame {
     height: 408px;
+  }
+  .video-page video {
+    width: 90%;
   }
 }
 @media (max-width: 500px) {
